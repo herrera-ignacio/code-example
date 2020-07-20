@@ -1,9 +1,10 @@
-function setRoutes(app) {
-	app.get('/', (req, res) => {
-		res.status(200).send('Hello amalgaworld')
-	})
+const { SuccessResponse } = require('./utils/SuccessResponse')
+const { UploadRouter } = require('./upload')
 
-	return app
+function setRoutes(app) {
+	app.get('/', (_, res) => SuccessResponse(res))
+
+	app.use('/upload', UploadRouter)
 }
 
 module.exports = { setRoutes }
