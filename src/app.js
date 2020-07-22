@@ -6,6 +6,7 @@ const app = express()
 
 //== Middleware ==//
 app.use(logger)
+app.use(express.json())
 
 //== Routing ==//
 setRoutes(app)
