@@ -4,7 +4,7 @@ WORKDIR /usr/app
 
 # Install dependencies
 COPY ./package.json ./
-RUN npm install --only=prod
+RUN npm install
 
 # Copy everything else
 COPY ./ ./
@@ -14,4 +14,4 @@ EXPOSE 80
 EXPOSE 443
 
 # Default commands
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
